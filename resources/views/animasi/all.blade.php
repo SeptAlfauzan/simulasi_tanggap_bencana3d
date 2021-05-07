@@ -5,7 +5,7 @@
   @include('template.header')
 </head>
 
-<body>
+<body id="body">
   <!-- Navbar -->
   @include('template.navbar')
   <!-- /.navbar -->
@@ -30,8 +30,8 @@
                 <div class="card-header">Header</div>
                 <div class="card-body text-dark">
                   <h5 class="card-title"> Scene : </h5>
-                  <div class="preview-container col-12 p-0">
-                    <div id="preview-canvas-{{$loop->index}}" class="preview" style="height: 200px;" data-model="{{ asset('storage/animations/').$animasi['path'] }}"></div>
+                  <div class="preview-container col-12 p-0" style="height: 200px;">
+                    <div id="preview-canvas-{{$loop->index}}" class="preview"  data-model="{{ asset('storage/animations/').$animasi['path'] }}"></div>
                   </div>
                   <p class="card-text"> {{$animasi['description']}} </p>
                 </div>
@@ -54,7 +54,7 @@
 
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-outline-dark btn-close" data-bs-dismiss="modal">Tutup</button>
                   </div>
                 </div>
               </div>
