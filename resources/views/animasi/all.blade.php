@@ -52,13 +52,13 @@
                   <div class="modal-header">
 
                     <h5 class="modal-title" id="staticBackdropLabel">Modal {{$loop->index}}
-                    @if($animasi->id != session('id_user'))
+                    @if($animasi->author_id != session('id_user'))
                       <button data-bs-toggle="tooltip" data-bs-placement="top" title="Anda bukan author dari model ini" type="button" disabled class="btn btn-warning">Edit</button>
                       <button data-bs-toggle="tooltip" data-bs-placement="top" title="Anda bukan author dari model ini" type="button" disabled class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-{{$loop->index}}">
                         delete
                       </button>
                     @else
-                      <a href="{{ route('animasi.edit', $animasi->author_id) }}"  type="button" class="btn btn-warning">Edit</a>
+                      <a href="{{ route('animasi.edit', $animasi->id) }}"  type="button" class="btn btn-warning">Edit</a>
                       <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete-{{$loop->index}}">
                         delete
                       </button>

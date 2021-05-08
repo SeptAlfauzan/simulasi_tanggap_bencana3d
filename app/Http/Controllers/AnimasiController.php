@@ -14,6 +14,7 @@ use Illuminate\Support\Str;
 class AnimasiController extends Controller
 {
     public function animation(Request $request){
+
         $scenes = Scene::select('id','nama')->get();
         return view('animasi.form')->with('scenes', $scenes);
     }
@@ -49,6 +50,7 @@ class AnimasiController extends Controller
 
     public function edit(Animasi $animasi)
     {
+
         $scenes = Scene::select('id','nama')->get();
         return view('animasi.edit')->with('animasi',  $animasi)->with('scenes', $scenes);
     }

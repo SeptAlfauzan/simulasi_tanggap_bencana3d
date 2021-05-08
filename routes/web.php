@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnimasiController;
+use App\Http\Controllers\DraggableController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\TubesController;
@@ -25,8 +26,10 @@ Route::post('/animation',[AnimasiController::class,'store'])->name('animation_st
 Route::get('/animation',[AnimasiController::class,'animation'])->name('animation');
 Route::get('/tampil_animasi',[AnimasiController::class,'tampil_animasi'])->name('tampil_animasi');
 Route::get('/animation/{animasi}',[AnimasiController::class,'show'])->name('show');
-Route::get('/edit/{animasi}', [AnimasiController::class, 'edit'])->name('animasi.edit');
+Route::get('/edit/{animasi}', [AnimasiController::class, 'edit'])->name('animasi.edit')->middleware('userlimitaccess');
 Route::patch('/update/{animasi}', [AnimasiController::class, 'update'])->name('animasi.update');
-Route::delete('/delete/{animasi}', [AnimasiController::class, 'delete'])->name('animasi.delete');
+Route::delete('/delete/{animasi}', [AnimasiController::class, 'delete'])->name('animasi.delete')->middleware('userlimitaccess');
+
+Route::get('/draggable', [DraggableController::class, 'index']);
 });
 ?>
