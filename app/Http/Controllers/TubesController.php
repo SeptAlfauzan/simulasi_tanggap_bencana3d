@@ -25,9 +25,9 @@ class TubesController extends Controller
     public function postlogin(Request $request){
         if(Auth::attempt($request->only('email','password'))){
             $data=$request->input();
-            $id_user = User::select('id')->where('email', $data['email'])->get();
+            $user = User::where('email', $data['email'])->first();
 
-            $request->session()->put('id_user',$id_user);
+            $request->session()->put('id_user',$user->id);
             $request->session()->put('email',$data['email']);
             return redirect('/dashboard');
         }

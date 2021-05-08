@@ -25,5 +25,8 @@ Route::post('/animation',[AnimasiController::class,'store'])->name('animation_st
 Route::get('/animation',[AnimasiController::class,'animation'])->name('animation');
 Route::get('/tampil_animasi',[AnimasiController::class,'tampil_animasi'])->name('tampil_animasi');
 Route::get('/animation/{animasi}',[AnimasiController::class,'show'])->name('show');
+Route::get('/edit/{animasi}', [AnimasiController::class, 'edit'])->name('animasi.edit');
+Route::patch('/update/{animasi}', [AnimasiController::class, 'update'])->name('animasi.update');
+Route::delete('/delete/{animasi}', [AnimasiController::class, 'delete'])->name('animasi.delete');
 });
 ?>
