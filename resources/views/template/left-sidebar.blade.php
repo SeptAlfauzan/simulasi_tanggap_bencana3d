@@ -14,8 +14,8 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ route('scane') }}">Tambah Scenes</a>
-                        <a class="nav-link" href="{{ route('tampil_scane') }}">Tabel Scenes</a>
+                        <a class="nav-link" href="{{ route('scene.add-new') }}">Tambah Scenes</a>
+                        <a class="nav-link" href="{{ route('scene.show') }}">Tabel Scenes</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#AnimasiLayouts" aria-expanded="false" aria-controls="AnimasiLayouts">

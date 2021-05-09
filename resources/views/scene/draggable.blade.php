@@ -1,30 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+@include('template.header')
+</head>
+@livewireStyles
+<style>
+.draggable-mirror{
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
+  width: 75%  !important;
+}
+.draggable:hover{
+  background-color: #edf7ff;
+  transition: 0.2s;
+}
+</style>
+<body>
+<!-- Navbar -->
+@include('template.navbar')
+<!-- /.navbar -->
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+<!-- Main Sidebar Container -->
+@include('template.left-sidebar')
 
-    <title>Hello, world!</title>
-  </head>
-  @livewireStyles
-  <body>
-    <h1>Hello, world!</h1>
-    @livewire('draggable-list')
+<main>
+<div class="container mt-3">
+    <div class="row">
+      <div class="col-12 my-5">
 
-    <!-- Optional JavaScript; choose one of the two! -->
+        <div class="border px-3 py-5 shadow">
+          @livewire('update-scene', ['scenes_id'=> $scenes_id])
+          <h5>Daftar descripsi model animasi</h5>
+          <span class="text-info" style="font-size: 11px;">*<i>drag and drop</i> daftar model, untuk menggantuk nomor urutnya</span>
+          @livewire('draggable-list', ['scenes_id'=> $scenes_id])
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-    @livewireScripts
-    <script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script>
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.min.js" integrity="sha384-lpyLfhYuitXl2zRZ5Bn2fqnhNAKOAaM/0Kr9laMspuaMiZfGmfwRNFh8HlMy49eQ" crossorigin="anonymous"></script>
-    -->
-  </body>
+@include('template.footer')
+
+@include('template.script')
+@livewireScripts
+<!-- draggable componen script -->
+<script src="https://cdn.jsdelivr.net/gh/livewire/sortable@v0.x.x/dist/livewire-sortable.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+</body>
 </html>

@@ -32,7 +32,7 @@
           @forelse ($scenes as $scene)
           <tr>
             <th><center>{{$loop->iteration}}</th>
-            <td>{{$scane->nama}}</td>
+            <td>{{$scene->nama}}</td>
           </tr>
           @empty
             <td colspan="6" class="text-center">Tidak ada data...</td>

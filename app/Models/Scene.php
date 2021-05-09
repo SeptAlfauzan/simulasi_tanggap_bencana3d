@@ -11,5 +11,5 @@ class Scene extends Model
     protected $guarded = [];
 
     protected $table = "scenes";
-    protected $fillable = ['id','nama'];
+    protected $fillable = ['id','nama','author_id'];
 }

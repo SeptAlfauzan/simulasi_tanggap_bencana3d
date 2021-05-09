@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Animasi;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -56,25 +58,5 @@ class TubesController extends Controller
         return redirect ('/login');
     }
 
-    // [pindah buat controller baru]
-    public function store(Request $request)
-    {
-        $validateData = $request->validate([
-            'nama'          => 'required|min:3|max:50',
-        ]);
-
-            $scane = new Scene();
-
-            $scane->nama = $request->input('nama');
-            // $scane->id_author = $request->input('id_author');
-            
-            $scane->save();
-
-        return redirect()->route('tampil_scane');
-    }
-    public function tampil_scane(){
-        $scane = Scene::all();
-        return view('tampil_scane',['scane' => $scane]);
-    }
 
 }
