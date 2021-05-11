@@ -17,7 +17,7 @@ Route::name('landing.')->group(function()
     Route::get('/contact', [LandingPageController::class, 'contact'])->name('contact');
     Route::get('/about-us', [LandingPageController::class, 'aboutUs'])->name('about-us');
     Route::get('/gallery-scene', [LandingPageController::class, 'galleryScene'])->name('gallery-scene');
-    Route::get('/gallery-scene/{$scene}', [LandingPageController::class, 'showScene'])->name('show-scene');
+    Route::get('/show-scene/{scene}', [LandingPageController::class, 'showScene'])->name('show-scene');
 });
 
 Route::get('/login',[TubesController::class,'login'])->name('login');
@@ -33,9 +33,11 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::name('scene.')->group(function () {
         Route::get('/scene/models/{id}', [SceneController::class,'showModels'])->name('list-model');
-        Route::get('scene/add-new',[SceneController::class,'scane'])->name('add-new');
+        Route::get('/scene/add-new',[SceneController::class,'scene'])->name('add-new');
         Route::get('/scene/show',[SceneController::class,'index'])->name('show');
         Route::post('/scane',[SceneController::class,'store'])->name('store');
+        Route::delete('/scane/{scene}',[SceneController::class,'delete'])->name('delete');
+        Route::get('/scene/restore/{scene}',[SceneController::class,'restore'])->name('restore');
     });
 
     Route::name('user.')->group(function(){

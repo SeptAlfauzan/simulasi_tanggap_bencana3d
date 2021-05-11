@@ -32,7 +32,6 @@
 <div class="container mt-3">
     <div class="row">
       <div class="col-12 my-5">
-
         <div class="border px-3 py-5 shadow">
           @livewire('update-scene', ['scenes_id'=> $scenes_id])
           <span class="text-info" style="font-size: 11px;">*klik nama scene lalu ubah nilainya, kemudian tekan tombol update untuk mengubah nama scene ini</span>

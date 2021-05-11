@@ -100,8 +100,6 @@ class AnimasiController extends Controller
         
         Animasi::where('id', $animasi->id)->update($validateData);
         return redirect()->route('tampil_animasi')->with('pesan', "Update data dengan id file '.$animasi->id.', berhasil");
-
-        return [$req, $animasi];
     }
 
     public function delete(Animasi $animasi){

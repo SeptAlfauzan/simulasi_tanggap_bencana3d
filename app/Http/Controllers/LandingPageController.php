@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Animasi;
+use App\Models\Scene;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
@@ -20,10 +22,13 @@ class LandingPageController extends Controller
     }
     public function galleryScene()
     {
-        return view('landing-page.gallery');
+        $scenes = Scene::all();
+        return view('landing-page.gallery')->with('scenes', $scenes);
     }
-    public function showScene()
+    public function showScene(Scene $scene)
     {
-        
+        $animations = Animasi::where('scenes_id', $scene->id)->get();
+        // return $scene;
+        return view('landing-page.show-scene', ['animations' => $animations]);
     }
 }

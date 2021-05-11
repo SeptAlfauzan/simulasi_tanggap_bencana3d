@@ -36,7 +36,12 @@
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tidak jadi</button>
-            <button type="button" class="btn btn-danger">Iya, hapus</button>
+            {{$scene->id}}
+            <form action="{{ route('scene.delete', $scene->id) }}" method="POST">
+                @method('DELETE')
+                @csrf
+                <button type="submit" class="btn btn-danger">Iya, hapus</button>
+            </form>
         </div>
         </div>
     </div>
