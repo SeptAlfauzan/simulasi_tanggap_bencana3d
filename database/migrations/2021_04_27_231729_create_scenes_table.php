@@ -17,6 +17,7 @@ class CreateScenesTable extends Migration
             $table->id();
             $table->integer('author_id');
             $table->string('nama');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

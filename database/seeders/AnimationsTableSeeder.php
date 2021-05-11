@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class AnimationsTableSeeder extends Seeder
 {
@@ -17,92 +16,60 @@ class AnimationsTableSeeder extends Seeder
     {
         
 
-        DB::table('animations')->delete();
+        \DB::table('animations')->delete();
         
-        DB::table('animations')->insert(array (
+        \DB::table('animations')->insert(array (
             0 => 
             array (
-                'id' => 1,
+                'id' => 3,
+                'position' => 1,
                 'scenes_id' => 1,
-                'path' => '/file-1620055391.gltf',
-                'scale' => 1.0,
-                'background_color' => '',
-                'description' => 'asdasd',
-                'author_id' => 4,
-                'created_at' => '2021-05-03 15:23:11',
-                'updated_at' => '2021-05-03 15:23:11',
+                'path' => '/file-1620447402.gltf',
+                'scale' => 25.8,
+                'background_color' => '0xff0000',
+                'description' => 'asdasd asdsad asdasd asdasd',
+                'author_id' => 1,
+                'created_at' => '2021-05-03 15:30:15',
+                'updated_at' => '2021-05-09 23:01:22',
             ),
             1 => 
             array (
-                'id' => 2,
-                'scenes_id' => 1,
-                'path' => '/file-1620055771.gltf',
+                'id' => 4,
+                'position' => 1,
+                'scenes_id' => 3,
+                'path' => '/file-1620057648.gltf',
                 'scale' => 1.0,
-                'background_color' => '',
-                'description' => 'asdasd',
+                'background_color' => '0x34e7f3',
+                'description' => 'lorem ipsum ipsum asdasd',
                 'author_id' => 4,
-                'created_at' => '2021-05-03 15:29:31',
-                'updated_at' => '2021-05-03 15:29:31',
+                'created_at' => '2021-05-03 16:00:48',
+                'updated_at' => '2021-05-09 04:21:14',
             ),
             2 => 
             array (
-                'id' => 3,
+                'id' => 7,
+                'position' => 2,
                 'scenes_id' => 1,
-                'path' => '/file-1620055815.gltf',
+                'path' => '/file-1620483082.gltf',
                 'scale' => 1.0,
-                'background_color' => '',
-                'description' => 'asdasd asdsad',
+                'background_color' => '0x000000',
+                'description' => 'tes lorem lorem',
                 'author_id' => 4,
-                'created_at' => '2021-05-03 15:30:15',
-                'updated_at' => '2021-05-03 15:30:15',
+                'created_at' => '2021-05-05 07:29:59',
+                'updated_at' => '2021-05-09 23:01:22',
             ),
             3 => 
             array (
-                'id' => 4,
-                'scenes_id' => 1,
-                'path' => '/file-1620057648.gltf',
-                'scale' => 1.0,
-                'background_color' => '',
-                'description' => 'asd',
-                'author_id' => 4,
-                'created_at' => '2021-05-03 16:00:48',
-                'updated_at' => '2021-05-03 16:00:48',
-            ),
-            4 => 
-            array (
-                'id' => 5,
-                'scenes_id' => 1,
-                'path' => '/file-1620057827.gltf',
-                'scale' => 1.0,
-                'background_color' => '',
-                'description' => 'asd',
-                'author_id' => 4,
-                'created_at' => '2021-05-03 16:03:47',
-                'updated_at' => '2021-05-03 16:03:47',
-            ),
-            5 => 
-            array (
-                'id' => 6,
-                'scenes_id' => 1,
-                'path' => '/file-1620199752.gltf',
-                'scale' => 1.0,
-                'background_color' => '',
+                'id' => 8,
+                'position' => 1,
+                'scenes_id' => 2,
+                'path' => '/file-1620262916.gltf',
+                'scale' => 11.8,
+                'background_color' => '0xff0e0e',
                 'description' => 'tes',
                 'author_id' => 4,
-                'created_at' => '2021-05-05 07:29:12',
-                'updated_at' => '2021-05-05 07:29:12',
-            ),
-            6 => 
-            array (
-                'id' => 7,
-                'scenes_id' => 1,
-                'path' => '/file-1620199799.gltf',
-                'scale' => 1.0,
-                'background_color' => '',
-                'description' => 'tes',
-                'author_id' => 4,
-                'created_at' => '2021-05-05 07:29:59',
-                'updated_at' => '2021-05-05 07:29:59',
+                'created_at' => '2021-05-06 01:01:56',
+                'updated_at' => '2021-05-09 04:21:14',
             ),
         ));
         

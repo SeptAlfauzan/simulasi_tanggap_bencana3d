@@ -22,21 +22,27 @@ class TubesController extends Controller
         return view('scane');
     }
     public function login(){
-        return view('login');
+        return view('auth.login');
     }
     public function postlogin(Request $request){
-        if(Auth::attempt($request->only('email','password'))){
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+
             $data=$request->input();
             $user = User::where('email', $data['email'])->first();
-
+            
+            // return redirect()->intended('dashboard');
+            // return $user;
             $request->session()->put('id_user',$user->id);
             $request->session()->put('email',$data['email']);
-            return redirect('/dashboard');
+            return redirect()->route('dashboard');
         }
+        return 'gagal';
         return redirect('/login');
     }
     public function registrasi(){
-        return view('registrasi');
+        return view('auth.registrasi');
     }
     public function simpanregistrasi(Request $request){
         // dd($request->all());

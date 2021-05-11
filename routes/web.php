@@ -2,14 +2,23 @@
 
 use App\Http\Controllers\AnimasiController;
 use App\Http\Controllers\DraggableController;
+use App\Http\Controllers\LandingPageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\SceneController;
 use App\Http\Controllers\TubesController;
+use App\Http\Controllers\UserController;
 use App\Models\Mahasiswa;
 use GuzzleHttp\Psr7\Request;
 
-Route::get('/', function(){ return view('user.landing-page'); });
+Route::name('landing.')->group(function()
+{ 
+    Route::get('/', [LandingPageController::class, 'index'])->name('home');
+    Route::get('/contact', [LandingPageController::class, 'contact'])->name('contact');
+    Route::get('/about-us', [LandingPageController::class, 'aboutUs'])->name('about-us');
+    Route::get('/gallery-scene', [LandingPageController::class, 'galleryScene'])->name('gallery-scene');
+    Route::get('/gallery-scene/{$scene}', [LandingPageController::class, 'showScene'])->name('show-scene');
+});
 
 Route::get('/login',[TubesController::class,'login'])->name('login');
 Route::get('/registrasi',[TubesController::class,'registrasi'])->name('registrasi');
@@ -18,7 +27,7 @@ Route::post('/postlogin',[TubesController::class,'postlogin'])->name('postlogin'
 Route::get('/logout',[TubesController::class,'logout'])->name('logout');
 
 
-Route::group(['middleware' => ['auth','cekmahasiswa:admin,mahasiswa']], function () {
+Route::group(['middleware' => ['auth']], function () {
     Route::get('/home',[TubesController::class,'home'])->name('home');
     Route::get('/dashboard',[TubesController::class,'dashboard'])->name('dashboard');
 
@@ -29,6 +38,9 @@ Route::group(['middleware' => ['auth','cekmahasiswa:admin,mahasiswa']], function
         Route::post('/scane',[SceneController::class,'store'])->name('store');
     });
 
+    Route::name('user.')->group(function(){
+       Route::get('/users/list', [UserController::class, 'showList'])->name('list');
+    });
 
     Route::post('/animation',[AnimasiController::class,'store'])->name('animation_store');
     Route::get('/animation',[AnimasiController::class,'animation'])->name('animation');

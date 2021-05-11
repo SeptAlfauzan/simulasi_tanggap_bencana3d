@@ -35,8 +35,9 @@
 
         <div class="border px-3 py-5 shadow">
           @livewire('update-scene', ['scenes_id'=> $scenes_id])
-          <h5>Daftar descripsi model animasi</h5>
-          <span class="text-info" style="font-size: 11px;">*<i>drag and drop</i> daftar model, untuk menggantuk nomor urutnya</span>
+          <span class="text-info" style="font-size: 11px;">*klik nama scene lalu ubah nilainya, kemudian tekan tombol update untuk mengubah nama scene ini</span>
+          <h5>Daftar (deskripsi) model animasi</h5>
+          <span class="text-info" style="font-size: 11px;">*<i>drag and drop</i> daftar model, untuk menggantuk nomor urut penampilan animasi (ascending)</span>
           @livewire('draggable-list', ['scenes_id'=> $scenes_id])
         </div>
       </div>

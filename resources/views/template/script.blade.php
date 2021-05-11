@@ -11,4 +11,4 @@
         <script src="{{ asset('js/threejsHandler/preview.js') }}" type="module"  crossorigin="anonymous"></script>
         <script src="{{ asset('js/threejsHandler/getModel.js') }}" type="module"  crossorigin="anonymous"></script>
         <!-- <link rel="stylesheet" src="{{ asset('js/getModel.js') }}">
-        <link rel="stylesheet" src="{{ asset('js/setup.js') }}"> --> -->
+        <link rel="stylesheet" src="{{ asset('js/setup.js') }}"> --> 

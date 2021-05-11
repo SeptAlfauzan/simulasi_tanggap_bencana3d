@@ -15,6 +15,7 @@ class CreateAnimationsTable extends Migration
     {
         Schema::create('animations', function (Blueprint $table) {
             $table->id();
+            $table->integer('position');
             $table->integer('scenes_id');
             $table->text('path');
             $table->float('scale',10,2);

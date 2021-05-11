@@ -12,5 +12,4 @@ class Animasi extends Model
 
     protected $table = "animations";
     protected $fillable = ['id','scenes_id','path', 'scale', 'background_color', 'description','author_id'];
-
 }
