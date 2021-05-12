@@ -13,9 +13,13 @@
   <body>
     <h1>Hello, world!</h1>
     <!-- dataset model animasi -->
+    <div class="position-absolute col-12 justify-content-center text-center border border-dark">
+      <h4>Animasi</h4>
     @foreach($animations as $animation)
       <input type="hidden" class="data-model" data-model="{{ asset('storage/animations/').$animation->path }}">
+      <button class="btn btn-outline-dark btn-change-look" data-index="{{ $loop->index }}">{{ $animation->id }}</button>
     @endforeach
+    </div>
 
     <div style="height: 100vh;" id="main-container" class="col-12 bg-secondary">
       <div id="canvas"></div>

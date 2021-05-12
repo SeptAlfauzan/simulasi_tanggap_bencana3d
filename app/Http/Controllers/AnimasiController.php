@@ -28,6 +28,10 @@ class AnimasiController extends Controller
             'description'   => 'required',
             'author_id'     => 'required',
         ]);
+        // set position / order of animation
+        $position = Animasi::where('scenes_id', $validateData['scenes_id'])->count();
+        $validateData['position'] = $position + 1;
+        
         // ganti value author_id dari email, ke id
         $validateData['author_id'] = User::where('email', $validateData['author_id'])->first()->id;
         // ganti value author_id dari email, ke id

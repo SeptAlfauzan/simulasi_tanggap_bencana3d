@@ -11,5 +11,5 @@ class Animasi extends Model
     protected $guarded = [];
 
     protected $table = "animations";
-    protected $fillable = ['id','scenes_id','path', 'scale', 'background_color', 'description','author_id'];
+    protected $fillable = ['id','scenes_id','path', 'scale', 'background_color', 'description','author_id', 'position'];
 }
