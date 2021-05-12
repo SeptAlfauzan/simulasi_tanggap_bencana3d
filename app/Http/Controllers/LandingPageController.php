@@ -29,6 +29,6 @@ class LandingPageController extends Controller
     {
         $animations = Animasi::where('scenes_id', $scene->id)->get();
         // return $scene;
-        return view('landing-page.show-scene', ['animations' => $animations]);
+        return view('landing-page.show-scene', ['animations' => $animations, 'scene' => $scene]);
     }
 }
