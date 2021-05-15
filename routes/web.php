@@ -8,6 +8,8 @@ use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\SceneController;
 use App\Http\Controllers\TubesController;
 use App\Http\Controllers\UserController;
+use App\Http\Resources\AnimationCollection;
+use App\Models\Animasi;
 use App\Models\Mahasiswa;
 use GuzzleHttp\Psr7\Request;
 
@@ -42,6 +44,12 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::name('user.')->group(function(){
        Route::get('/users/list', [UserController::class, 'showList'])->name('list');
+       Route::get('/users/add-new', [UserController::class, 'addNew'])->name('add-new');
+       Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('edit');
+       Route::post('/users/store', [UserController::class, 'storeFromAdmin'])->name('admin-store');
+       Route::patch('/users/update/{user}', [UserController::class, 'update'])->name('update');
+       Route::delete('/users/delete/{user}', [UserController::class, 'delete'])->name('delete');
+       Route::get('/users/restore/{user}', [UserController::class, 'restore'])->name('restore');
     });
 
     Route::post('/animation',[AnimasiController::class,'store'])->name('animation_store');
@@ -53,5 +61,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('/delete/{animasi}', [AnimasiController::class, 'delete'])->name('animasi.delete')->middleware('userlimitaccess');
 
     Route::get('/draggable', [DraggableController::class, 'index']);
+
 });
+// Route::get('/animasi/{id}', function($id){
+//     return Animasi::find($id);
+// });
 ?>

@@ -40,7 +40,7 @@
                             Daftar user
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse">
+                        <a class="nav-link collapsed" href="{{ route('user.add-new') }}">
                             Tambah user
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>

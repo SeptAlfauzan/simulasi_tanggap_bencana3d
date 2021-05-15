@@ -23,6 +23,14 @@
     <div class="container mt-3">
       <div class="row">
         <div class="col-12">
+          @if(Session::has('pesan'))
+          <div class="alert mt-2 alert-warning alert-dismissible fade show" role="alert">
+            {{ Session::get('pesan') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          @endif
           <div class="py-4 d-flex justify-content-end align-items-center">
             <h2 class="mr-auto">Daftar Model Animasi</h2>
             <a href="{{ route('animation') }}" class="btn btn-primary">

@@ -36,6 +36,7 @@ class TubesController extends Controller
             // return $user;
             $request->session()->put('id_user',$user->id);
             $request->session()->put('email',$data['email']);
+            $request->session()->put('level',$user->level);
             return redirect()->route('dashboard');
         }
         return 'gagal';
@@ -49,7 +50,7 @@ class TubesController extends Controller
 
         User::create([
             'name' => $request->name,
-            'level' => 'mahasiswa',
+            'level' => 'contributor',
             'email' => $request->email,
             'password' => bcrypt($request->password),
             'remember_token' => Str::random(60),

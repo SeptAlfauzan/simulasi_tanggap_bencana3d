@@ -8,12 +8,14 @@ use Livewire\Component;
 class UpdateUser extends Component
 {
     public $user_id;
-    public  $name, $email, $password, $verifyPassword, $level, $user;
+    public $name, $email, $password, $verifyPassword, $level, $user;
+    public $message;
 
     public function mount()
     {
-        # code...
         $this->user = User::find($this->user_id);
+        $this->name = $this->user->name;
+        $this->email = $this->user->email;
     }
     
     public function render()

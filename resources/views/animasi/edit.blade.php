@@ -15,7 +15,8 @@
         <main>
             <div class="container-fluid row">
                     <form class="mx-auto px-4 py-3 order-md-1 order-1" action="{{ route('animasi.update', ['animasi'=> $animasi->id]) }}" method="POST" enctype="multipart/form-data">
-                        <h1 class="mt-4">Input Model Animasi</h1>
+                        <h1 class="mt-4">Edit Model Animasi</h1>
+                        <p class="col-12 row nav-link"><a href="{{ route('tampil_animasi') }}">Daftar Model Animasi</a>/Edit Model Animasi</p>
                         @method('PATCH')
                         @csrf
                         <div class="row col-12 border">
