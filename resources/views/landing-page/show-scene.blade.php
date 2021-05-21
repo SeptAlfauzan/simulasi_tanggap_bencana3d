@@ -106,6 +106,7 @@
   </head>
 
   <body>
+    <a href="{{ route('landing.gallery-scene') }}" style="z-index: 3000" class="position-absolute m-3 col-1 btn btn-primary nav-link text-white">< Kembali</a>
   <!-- icon of toggle play and pause -->
   <i id="player-controll" class="fas fa-play control d-none"></i>
     <!-- dataset model animasi -->

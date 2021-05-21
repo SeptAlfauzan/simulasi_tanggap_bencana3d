@@ -7,20 +7,17 @@
         <!-- Left Column -->
         <div
           class="left-column d-flex flex-lg-grow-1 flex-column align-items-lg-start text-lg-start align-items-center">
-          <p class="text-caption">START NOW</p>
+          
           <h1 class="title-text-big">
-            The best way<br class="d-lg-block d-none" />
-            to organize your online learning
+            Ilustrasikan simulasi tanggap bencana dengan Animasi 3D
           </h1>
           <div class="d-flex flex-sm-row flex-column align-items-center mx-lg-0 mx-auto justify-content-center gap-3">
-            <button class="btn d-inline-flex mb-md-0 btn-try text-white">
-              Try it free
-            </button>
-            <button class="btn btn-outline">
+
+            <a href="{{ route('login') }}" class="btn btn-outline">
               <div class="d-flex align-items-center">
-                Log In to See More
+                Log In Sebagai Contributor
               </div>
-            </button>
+            </a>
           </div>
         </div>
         <!-- Right Column -->
@@ -210,7 +207,7 @@
     <div class="text-center title-text">
       <h1 class="text-title">3 Keys Benefit</h1>
       <p class="text-caption" style="margin-left: 3rem; margin-right: 3rem">
-        You can easily manage your business with a powerful tools
+        Ilustrasikan simulasi tanggap bencana dengan Animasi 3D
       </p>
     </div>
 
@@ -221,10 +218,9 @@
             <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-2.png"
               alt="" />
           </div>
-          <h3 class="icon-title">Easy to Operate</h3>
+          <h3 class="icon-title">Mudah</h3>
           <p class="icon-caption">
-            This can easily help you to<br />
-            grow up your business fast
+            Lorem ipsum dolor sit amet.
           </p>
         </div>
         <div class="col-lg-4 column">
@@ -232,10 +228,9 @@
             <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-3.png"
               alt="" />
           </div>
-          <h3 class="icon-title">Real-Time Analytic</h3>
+          <h3 class="icon-title">Atraktif</h3>
           <p class="icon-caption">
-            With real-time analytics, you<br />
-            can check data in real time
+            Lorem ipsum dolor sit.
           </p>
         </div>
         <div class="col-lg-4 column">
@@ -243,10 +238,9 @@
             <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-4.png"
               alt="" />
           </div>
-          <h3 class="icon-title">Very Full Secured</h3>
+          <h3 class="icon-title">Interaktif</h3>
           <p class="icon-caption">
-            With real-time analytics, we<br />
-            will guarantee your data
+            Lorem ipsum dolor sit.
           </p>
         </div>
       </div>

@@ -42,13 +42,19 @@
             <div class="col-md-4 col-6 px-3 py-2">
               <a href="#" class="modal-trigger" role="button" class="col-12 nav-link popover-test m-0" title="Klik untuk lihat detail" data-bs-toggle="modal" data-bs-target="#modal-detail-{{$loop->index}}">
                 <div class="card border-dark mb-3">
-                  <div class="card-header">Header</div>
+                  <div class="card-header">
+                    Id scene {{ $animasi['scenes_id'] }}
+                    @if($animasi->author_id != session('id_user'))
+                    <span class="card-title text-secondary">Hanya Preview</span>
+                    @endif
+                  </div>
                   <div class="card-body text-dark">
-                    <h5 class="card-title"> Scene : </h5>
+                 
                     <div class="preview-container col-12 p-0" style="height: 200px;">
                       <div id="preview-canvas-{{$loop->index}}" class="preview"  data-model="{{ asset('storage/animations/').$animasi['path'] }}"></div>
                     </div>
-                    <p class="card-text"> {{$animasi['description']}} </p>
+                    <p class="card-text text-secondary"> Nomor urut pada scene {{$animasi['position']}} </p>
+                    <p class="card-text text-secondary"> Deskripsi: {{$animasi['description']}} </p>
                   </div>
                 </div>
               </a>

@@ -22,7 +22,8 @@ class LandingPageController extends Controller
     }
     public function galleryScene()
     {
-        $scenes = Scene::all();
+        $scenes = Animasi::join('scenes', 'animations.scenes_id', '=','scenes.id')->where('scenes.deleted_at', '=', null)->get()->groupBy('scenes_id');
+        // return Scene::select('animations.*','scenes.*')->join('animations', 'scenes.id', '=','animations.scenes_id')->where('scenes.deleted_at', '=', null)->groupBy('scenes.id')->get();
         return view('landing-page.gallery')->with('scenes', $scenes);
     }
     public function showScene(Scene $scene)

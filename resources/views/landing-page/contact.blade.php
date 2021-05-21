@@ -41,7 +41,7 @@
         <!-- Contact Form-->
         <!-- In order to set the email address and subject line for the contact form go to the assets/mail/contact_me.php file.-->
 
-            <div class="wrap-contact2">
+            <!-- <div class="wrap-contact2">
                 <form class="contact2-form validate-form">
                     <h3 class="contact2-form-title">
                         Contact Us
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </form>
-            </div>
+            </div> -->
     </div>
 </section>
 @endsection

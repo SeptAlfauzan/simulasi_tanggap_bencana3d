@@ -20,6 +20,7 @@ class AnimasiController extends Controller
     }
     public function store(Request $request)
     {
+       
         $validateData = $request->validate([
             'scenes_id'     => 'required',
             'path'          => 'required|file|max:50000',

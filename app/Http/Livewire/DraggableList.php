@@ -13,7 +13,8 @@ class DraggableList extends Component
     public function render()
     {
         return view('livewire.draggable-list', [
-            'products' => Animasi::where('scenes_id', $this->scenes_id)->orderBy('position')->get()
+            'products' => Animasi::where('scenes_id', $this->scenes_id)->orderBy('position')->get(),
+            'previews' => Animasi::where('scenes_id', $this->scenes_id)->orderBy('position')->get()
         ]);
     }
 

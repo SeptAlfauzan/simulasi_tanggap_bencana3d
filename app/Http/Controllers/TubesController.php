@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Models\Scene;
 use App\Models\User;
-
+use Illuminate\Validation\ValidationException;
 
 class TubesController extends Controller
 {
@@ -39,7 +39,7 @@ class TubesController extends Controller
             $request->session()->put('level',$user->level);
             return redirect()->route('dashboard');
         }
-        return 'gagal';
+        session()->flash('message', 'Login gagal');
         return redirect('/login');
     }
     public function registrasi(){
@@ -48,15 +48,31 @@ class TubesController extends Controller
     public function simpanregistrasi(Request $request){
         // dd($request->all());
 
-        User::create([
-            'name' => $request->name,
-            'level' => 'contributor',
-            'email' => $request->email,
-            'password' => bcrypt($request->password),
-            'remember_token' => Str::random(60),
+        $validateData = $request->validate([
+            'name'     => 'required',
+            'email'         => 'required|email|unique:users',
+            'password'   => 'required|min:8',
+            'repassword'   => 'required|min:8',
         ]);
+        if ($validateData['repassword'] != $validateData['password']) {
+            session()->flash('message', 'registrasi gagal');
+            throw ValidationException::withMessages(['repassword' => "password doesn't match"]);
+            return redirect ('/registrasi');
+        }
 
-        return view('login');
+        unset($validateData['repassword']);
+        $validateData['level'] = 'contributor';
+        $validateData['remember_token'] = Str::random(60);
+        $validateData['password'] =bcrypt($validateData['password']);
+
+        if (User::create($validateData)) {
+            session()->flash('message', 'registrasi berhasil');
+            session()->flash('type', 'success');
+        }else{
+            session()->flash('message', 'registrasi gagal');
+            session()->flash('type', 'danger');
+        }
+        return redirect ('/login');
 
     }
     public function logout(){

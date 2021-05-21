@@ -46,10 +46,10 @@
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
-                                <label for="preview">Preview</label>
+                                <!-- <label for="preview">Preview</label>
                                 <div class="col-12 bg-secondary" style="height: 200px;" id="container-preview-form">
                                         <div id="canvas-preview-form"></div>
-                                </div>
+                                </div> -->
                                 <div class="form-group">
                                     <label for="path">Model Animasi</label>
                                     <input type="file" class="form-control-file" id="path" name="path">

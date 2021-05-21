@@ -7,8 +7,8 @@
     <div class="row text-center text-lg-left">
     @forelse($scenes as $scene)
         <div class="col-lg-4 col-md-6 col-12">
-            <a href="{{ route('landing.show-scene', $scene->id) }}" class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="https://source.unsplash.com/pWkk7iiCoDM/400x300" alt="">
+            <a href="{{ route('landing.show-scene', $scene[0]->id) }}" class="d-block mb-4 h-100">
+                <p>{{$scene[0]->path}}</p>
             </a>
         </div>
     @empty
