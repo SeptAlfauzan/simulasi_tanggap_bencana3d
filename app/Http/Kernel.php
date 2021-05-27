@@ -64,5 +64,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'cekmahasiswa'=>\App\Http\Middleware\CekMahasiswa::class,
         'userlimitaccess'=>\App\Http\Middleware\UserAccessLimit::class,
+        'adminonly'=>\App\Http\Middleware\AdminOnly::class,
     ];
 }

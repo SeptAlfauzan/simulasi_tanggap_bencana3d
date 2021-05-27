@@ -23,7 +23,7 @@
         <!-- Right Column -->
         <div class="right-column text-center d-flex justify-content-lg-end justify-content-center pe-0">
           <img id="img-fluid" class="h-auto mw-100"
-            src="http://api.elements.buildwithangga.com/storage/files/2/assets/Header/Header4/Header-4-1.png"
+            src="{{ asset('images/landing-page-ilus.png') }}"
             alt="" />
         </div>
       </div>
@@ -213,7 +213,7 @@
 
     <div class="grid-padding text-center">
       <div class="row">
-        <div class="col-lg-4 column">
+        <div class="col-lg-4 column" data-aos="fade-up" data-aos-duration="1000">
           <div class="icon">
             <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-2.png"
               alt="" />
@@ -223,7 +223,7 @@
             Lorem ipsum dolor sit amet.
           </p>
         </div>
-        <div class="col-lg-4 column">
+        <div class="col-lg-4 column" data-aos="fade-up" data-aos-duration="2000">
           <div class="icon">
             <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-3.png"
               alt="" />
@@ -233,7 +233,7 @@
             Lorem ipsum dolor sit.
           </p>
         </div>
-        <div class="col-lg-4 column">
+        <div class="col-lg-4 column" data-aos="fade-up" data-aos-duration="3000">
           <div class="icon">
             <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-4.png"
               alt="" />

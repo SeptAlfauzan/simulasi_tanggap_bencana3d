@@ -7,6 +7,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
+                @if(Session::get('level') == 'administrator')
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Scenes
@@ -18,6 +19,7 @@
                         <a class="nav-link" href="{{ route('scene.show') }}">Tabel Scenes</a>
                     </nav>
                 </div>
+                @endif
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#AnimasiLayouts" aria-expanded="false" aria-controls="AnimasiLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Animasi
@@ -37,13 +39,15 @@
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                         <a class="nav-link collapsed" href="{{ route('user.list') }}">
-                            Daftar user
+                            Daftar akun user
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
+                        @if(Session::get('level') == 'administrator')
                         <a class="nav-link collapsed" href="{{ route('user.add-new') }}">
                             Tambah user
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
+                        @endif
                     </nav>
                 </div>
                 <a class="nav-link" href="charts.html">

@@ -46,21 +46,10 @@
                 <div class="col-md-2">
                 <label for="validationDefault04" class="form-label">State</label>
                     <select class="custom-select form-select" id="validationDefault04" required name="level">
-                        <option selected disabled value="">CPilih level</option>
+                        <option selected disabled value="">Pilih level akun</option>
                         <option value="administrator">administrator</option>
                         <option value="contributor">contributor</option>
                     </select>
-                </div>
-                <div class="col-12">
-                    <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                    <label class="form-check-label" for="invalidCheck">
-                        Agree to terms and conditions
-                    </label>
-                    <div class="invalid-feedback">
-                        You must agree before submitting.
-                    </div>
-                    </div>
                 </div>
                 <div class="col-12">
                     <button class="btn btn-primary" type="submit">Submit form</button>

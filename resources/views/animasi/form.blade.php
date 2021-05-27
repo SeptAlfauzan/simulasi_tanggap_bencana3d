@@ -55,7 +55,7 @@
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group d-none">
                                     <label for="customRange1">Ukuran skala dari model</label>
                                     <br>
                                     <input type="range" value="{{ old('scale') }}" name="scale" min="1" max="40" step="0.1" class="form-range" id="scaleSlider">
@@ -64,7 +64,7 @@
                                     <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group d-none">
                                     <label for="customRange1">Warna latar dari model</label>
                                     <br>
                                     <input type="color" value="{{ old('background_color') }}" name="background_color">

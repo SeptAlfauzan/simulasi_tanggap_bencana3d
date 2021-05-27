@@ -30,10 +30,10 @@
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
-            <div class="col-xl-10 col-lg-12 col-md-9">
+            <div class="col-xl-10 col-lg-12 col-md-9 p-0">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
+                <div class="card o-hidden border-0 shadow-lg my-5 p-0">
+                    <div class="card-body m-0 p-0">
                         <!-- Nested Row within Card Body -->
                         @if(session()->has('message'))
                         <div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
@@ -41,10 +41,12 @@
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                         @endif
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
+                        <div class="row m-0 p-0">
+                            <div class="order-2 col-lg-6 d-none d-lg-block m-0 p-0">
+                            <img id="img-fluid" class="h-100 mw-100 m-0" src="{{ asset('images/landing-page-ilus.png') }}" alt="" style="object-fit: contain" />
+                            </div>
+                            <div class="order-1 col-lg-6 m-0 p-0">
+                                <div class="px-5 pt-5">
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
@@ -59,10 +61,10 @@
                                         <input type="submit" name="" value="LOGIN" class="btn btn-primary btn-block">
                                     </form>
                                     <hr>
-                                    <div class="text-center">
+                                    <!-- <div class="text-center">
                                         <a class="small" href="password.html">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
+                                    </div> -->
+                                    <div class="text-center m-0 p-0">
                                         <a class="small" href="/registrasi">Create an Account!</a>
                                     </div>
                                 </div>

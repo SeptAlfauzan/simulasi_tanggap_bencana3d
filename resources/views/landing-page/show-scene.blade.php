@@ -106,7 +106,7 @@
   </head>
 
   <body>
-    <a href="{{ route('landing.gallery-scene') }}" style="z-index: 3000" class="position-absolute m-3 col-1 btn btn-primary nav-link text-white">< Kembali</a>
+    <a href="{{ route('landing.gallery-scene') }}" style="z-index: 3000" class="position-absolute m-3 col-1 btn btn-primary nav-link text-white row font-weight-bold text-center">&LeftAngleBracket;&LeftAngleBracket;</a>
   <!-- icon of toggle play and pause -->
   <i id="player-controll" class="fas fa-play control d-none"></i>
     <!-- dataset model animasi -->
@@ -121,7 +121,7 @@
 
       @foreach($animations as $animation)
       <!-- <input type="hidden" class="data-model" data-model="{{ asset('storage/animations/').$animation->path }}" data-deskripsi="{{ $animation }}"> -->
-      <button class="btn btn-outline-dark btn-change-look data-model" data-model="{{ asset('storage/animations/').$animation->path }}" data-deskripsi="{{ $animation->description }}" data-index="{{ $loop->index }}">{{ $animation->id }}</button>
+      <button class="btn btn-outline-dark btn-change-look data-model" data-model="{{ asset('storage/animations/').$animation->path }}" data-deskripsi="{{ $animation->description }}" data-index="{{ $loop->index }}">{{ $animation->position }}</button>
       @endforeach
     </div>
 

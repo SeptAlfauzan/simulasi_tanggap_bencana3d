@@ -16,12 +16,12 @@
     <!-- Content Wrapper. Contains page content -->
     <main>
         <div class="container-fluid">
-            <h1 class="mt-4">Input Scane</h1>
+            <h1 class="mt-4">Input Scene</h1>
             <br>
             <form action="{{ route('scene.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="nama">Nama Scane</label>
+                    <label for="nama">Nama Scene</label>
                     <input type="text" hidden name="id_author" value="1">
                     <input type="text" class="form-control" id="nama" name="nama" value="{{ old('nama') }}">
                     @error('nama')

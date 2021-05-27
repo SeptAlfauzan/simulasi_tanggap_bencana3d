@@ -33,7 +33,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/home',[TubesController::class,'home'])->name('home');
     Route::get('/dashboard',[TubesController::class,'dashboard'])->name('dashboard');
 
-    Route::name('scene.')->group(function () {
+    Route::name('scene.')->group(['middleware' => ['adminonly']], function () {
         Route::get('/scene/models/{id}', [SceneController::class,'showModels'])->name('list-model');
         Route::get('/scene/add-new',[SceneController::class,'scene'])->name('add-new');
         Route::get('/scene/show',[SceneController::class,'index'])->name('show');
@@ -44,12 +44,12 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::name('user.')->group(function(){
        Route::get('/users/list', [UserController::class, 'showList'])->name('list');
-       Route::get('/users/add-new', [UserController::class, 'addNew'])->name('add-new');
+       Route::get('/users/add-new', [UserController::class, 'addNew'])->name('add-new')->middleware('adminonly');
        Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('edit');
-       Route::post('/users/store', [UserController::class, 'storeFromAdmin'])->name('admin-store');
+       Route::post('/users/store', [UserController::class, 'storeFromAdmin'])->name('admin-store')->middleware('adminonly');
        Route::patch('/users/update/{user}', [UserController::class, 'update'])->name('update');
-       Route::delete('/users/delete/{user}', [UserController::class, 'delete'])->name('delete');
-       Route::get('/users/restore/{user}', [UserController::class, 'restore'])->name('restore');
+       Route::delete('/users/delete/{user}', [UserController::class, 'delete'])->name('delete')->middleware('adminonly');
+       Route::get('/users/restore/{user}', [UserController::class, 'restore'])->name('restore')->middleware('adminonly');
     });
 
     Route::post('/animation',[AnimasiController::class,'store'])->name('animation_store');

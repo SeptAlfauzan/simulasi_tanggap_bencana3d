@@ -52,12 +52,16 @@
                                 </div> -->
                                 <div class="form-group">
                                     <label for="path">Model Animasi</label>
+                                    <br>
+                                    <small class="text-danger">*kosongi field model animasi, jika anda tidak ingin mengganti model animasinya</small>
+                                    <br>
+                                    <br>
                                     <input type="file" class="form-control-file" id="path" name="path">
                                     @error('path')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group d-none">
                                     <label for="customRange1">Ukuran skala dari model</label>
                                     <br>
                                     <input type="range" value="{{ empty(old('scale'))? $animasi->scale : old('scale') }}" name="scale" min="1" max="40" step="0.1" class="form-range" id="scaleSlider">
@@ -66,7 +70,7 @@
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group d-none">
                                     <label for="customRange1">Warna latar dari model</label>
                                     <br>
                                     <input type="color" value="{{ empty(old('background_color'))? Str::replaceFirst('0x','#',$animasi->background_color) : old('background_color') }}" name="background_color">
@@ -77,7 +81,7 @@
                             </div>
                             <div class="col-12 row justify-content-end">
                                 <a href="{{ route('tampil_animasi') }}" class="btn btn-outline-dark px-3">Kembali</a>
-                                <button type="submit" class="ml-2 btn btn-primary px-3">Tambah</button>
+                                <button type="submit" class="ml-2 btn btn-primary px-3">Edit</button>
                             </div>
                     </form>
                 </div>
